@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="#1976d2" opacity="0.1"/>
+  
+  <!-- Shield Shape -->
+  <path d="M100 20 L180 60 L180 140 L100 180 L20 140 L20 60 Z" 
+        fill="#1976d2" stroke="#1976d2" stroke-width="2"/>
+  
+  <!-- Alert Symbol -->
+  <path d="M100 60 L100 120 M100 130 L100 140" 
+        stroke="#ffffff" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="100" cy="150" r="5" fill="#ffffff"/>
+  
+  <!-- Project Name -->
+  <text x="100" y="100" font-family="Arial" font-size="24" 
+        fill="#ffffff" text-anchor="middle" dominant-baseline="middle">
+    H
+  </text>
+</svg> 

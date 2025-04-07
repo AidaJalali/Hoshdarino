@@ -1,6 +1,6 @@
 # Hoshdarino
 
-![Project Logo](frontend/public/assets/images/logo.jpeg)
+![Project Logo](frontend/public/assets/logo.jpeg)
 
 Hoshdarino is an intelligent software system that provides real-time information about natural disasters. The system helps users stay informed about potential hazards by displaying a map of the country and identifying high-risk areas, enabling them to take necessary precautions. The platform also sends urgent alerts to users during critical situations.
 

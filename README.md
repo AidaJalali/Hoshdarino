@@ -36,73 +36,79 @@ Hoshdarino is an intelligent software system that provides real-time information
 - Create a fast alerting platform for people at risk
 - Use analytical data to identify disaster occurrence patterns
 
-## 🛠️ Technical Implementation
+## 🛠️ Technical Stack
 
-### Database
-- MongoDB for storing disaster-related data
-- Structured data schema for disaster history
-- API integration with reliable data sources
+### Backend (Go)
+- **Framework**: Gin/Echo for high-performance HTTP routing
+- **Database**: MongoDB with official Go driver
+- **Authentication**: JWT-based authentication
+- **API**: RESTful API with OpenAPI/Swagger documentation
+- **Testing**: Go's built-in testing package + testify
+- **Logging**: Zap logger for structured logging
+- **Configuration**: Viper for configuration management
 
-### User Interface
-- Interactive map interface using Google Maps API/OpenStreetMap
-- Color-coded risk zones and warnings
-- Detailed area information and search functionality
-
-### Alert System
-- User registration and alert preferences
-- Location-based alert triggers
-- Multi-channel notification system
-
-### Data Analysis
-- Machine learning algorithms for disaster prediction
-- Historical data analysis
-- Statistical visualization tools
+### Frontend (React + TypeScript)
+- **Framework**: React 18+ with TypeScript
+- **Build Tool**: Vite for fast development and building
+- **State Management**: Zustand for global state
+- **Styling**: Tailwind CSS for utility-first styling
+- **API Client**: React Query for data fetching
+- **Maps**: Mapbox GL JS for interactive maps
+- **Testing**: Vitest + React Testing Library
+- **Form Handling**: React Hook Form
+- **Validation**: Zod for schema validation
 
 ## 📁 Project Structure
 
 ```
 hoshdarino/
-├── frontend/                    # Frontend application
+├── frontend/                    # React frontend application
 │   ├── public/                  # Static files
 │   │   ├── assets/             # Images, fonts, etc.
-│   │   │   ├── logo.png        # Project logo
-│   │   │   └── index.html      # Main HTML file
-│   │   └── src/                # Source code
-│   │       ├── components/       # React/Vue components
-│   │       │   ├── map/          # Map-related components
-│   │       │   ├── alerts/       # Alert system components
-│   │       │   └── common/       # Shared components
-│   │       ├── pages/            # Page components
-│   │       ├── services/         # API services
-│   │       ├── utils/            # Utility functions
-│   │       ├── hooks/            # Custom React hooks
-│   │       ├── context/          # React context providers
-│   │       ├── styles/           # Global styles
-│   │       └── App.js            # Main application component
-│   │       └── package.json      # Frontend dependencies
-│   │       └── README.md         # Frontend documentation
-│   ├── backend/                # Backend application
-│   │   ├── src/                # Source code
-│   │   │   ├── controllers/    # Route controllers
-│   │   │   ├── models/         # Database models
-│   │   │   ├── routes/         # API routes
-│   │   │   ├── services/       # Business logic
-│   │   │   ├── utils/          # Utility functions
-│   │   │   ├── config/         # Configuration files
-│   │   │   └── app.js          # Main application file
-│   │   ├── tests/              # Backend tests
-│   │   ├── package.json        # Backend dependencies
-│   │   └── README.md           # Backend documentation
-│   ├── docs/                   # Project documentation
-│   │   ├── api/                # API documentation
-│   │   ├── architecture/       # Architecture diagrams
-│   │   └── deployment/         # Deployment guides
-│   ├── scripts/                # Utility scripts
-│   │   ├── setup.sh            # Setup script
-│   │   └── deploy.sh           # Deployment script
-│   ├── .gitignore            # Git ignore file
-│   └── package.json          # Root package.json
-└── README.md                 # Main project README
+│   │   └── index.html          # Main HTML file
+│   ├── src/                    # Source code
+│   │   ├── components/         # React components
+│   │   │   ├── map/           # Map-related components
+│   │   │   ├── alerts/        # Alert system components
+│   │   │   └── common/        # Shared components
+│   │   ├── pages/             # Page components
+│   │   ├── services/          # API services
+│   │   ├── hooks/             # Custom React hooks
+│   │   ├── store/             # Zustand store
+│   │   ├── types/             # TypeScript types
+│   │   ├── utils/             # Utility functions
+│   │   ├── styles/            # Global styles
+│   │   └── App.tsx            # Main application component
+│   ├── package.json           # Frontend dependencies
+│   └── tsconfig.json          # TypeScript configuration
+│
+├── backend/                    # Go backend application
+│   ├── cmd/                    # Application entry points
+│   │   └── api/               # Main API server
+│   ├── internal/              # Private application code
+│   │   ├── api/              # API handlers
+│   │   ├── config/           # Configuration
+│   │   ├── middleware/       # HTTP middleware
+│   │   ├── models/           # Data models
+│   │   ├── repository/       # Database operations
+│   │   ├── service/          # Business logic
+│   │   └── utils/            # Utility functions
+│   ├── pkg/                  # Public library code
+│   ├── api/                  # API documentation
+│   ├── go.mod                # Go module file
+│   └── go.sum                # Go module checksum
+│
+├── docs/                     # Project documentation
+│   ├── api/                  # API documentation
+│   ├── architecture/         # Architecture diagrams
+│   └── deployment/           # Deployment guides
+│
+├── scripts/                  # Utility scripts
+│   ├── setup.sh             # Setup script
+│   └── deploy.sh            # Deployment script
+│
+├── .gitignore               # Git ignore file
+└── README.md                # Main project README
 ```
 
 ## 📅 Project Timeline
@@ -118,7 +124,25 @@ hoshdarino/
 
 ## 🔧 Installation
 
-*Installation instructions will be added as the project progresses*
+### Prerequisites
+- Go 1.21 or later
+- Node.js 18 or later
+- MongoDB 6.0 or later
+- Git
+
+### Backend Setup
+```bash
+cd backend
+go mod download
+go run cmd/api/main.go
+```
+
+### Frontend Setup
+```bash
+cd frontend
+npm install
+npm run dev
+```
 
 ## 📝 License
 
